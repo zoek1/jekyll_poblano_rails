@@ -1,0 +1,68 @@
+header:
+  img: https://achievement-images.teamtreehouse.com/badges_SimpleFacebook_Stage1.png
+  msg: >
+    Poblano Rails es una comunidad formada por desarrolladores y emprendedores <br>
+    fascinados con "Ruby" y con "Ruby on Rails".
+  btn:
+    msg: Conoce  más
+    ref: "#!"
+
+objectives:
+  title: Poblano Rails
+  msg: Somos una comunidad de desarrolladores fascinados con Ruby y con Rails.
+  id: objetivos
+  list:
+    - title: Charlas
+      msg: Ponencias y lightning talk relacionadas con el ecosistema de ruby y rails.
+      meta:
+        icon: videocam
+
+    - title: Comunidad
+      msg: Conectar comunidades tecnológicas con las necesidades y oportunidades de la sociedad.
+      meta:
+        icon: forum
+
+    - title: Pizzas y cheves
+      msg: El combistible para todo apasionado del codigo. ;)
+      meta:
+        icon: code
+
+meetings:
+  id: reuniones
+  title: Nuestras reuniones
+  list:
+    - head:
+        img: http://html5facil.com/wp-content/uploads/2015/04/ninja-code-party-saludo.jpg
+        msg: Poblano Rails No.1
+      content:
+        msg: >
+          Ya tenemos fecha para nuestra primera reunión de Poblano Rails.
+          Habrá Cerveza y Pizzas gracias a nuestros fabulosos patrocinadores: <strong>Devbranding</strong> e
+          <strong>Inventoteca</strong>.
+        list:
+          - img: https://pbs.twimg.com/profile_images/601081988473163776/TfKqIK5c.jpg
+            msg: Lugar de encuentro en Av. 5 Pte 134 Centro Histórico, Puebla.
+            title: Inventoteca
+          - icon: today
+            title: Viernes 26 de junio de 2015
+            msg: Con un horario de 18:00 a 21:00.s
+
+
+footer:
+  title: Poblano rails
+  msg:  >
+    Poblano Rails un espacio para hacer networking, conocer otros programadores, emprendedores, y claro,
+    para poder pasar un buen tiempo entre comunidad.
+  links:
+    title: Sitios de interes
+    list:
+      - msg: Facebook
+        ref: "https://www.facebook.com/pages/Poblano-Rails/1648354988732354?fref=ts"
+      - msg: Blog
+        ref: "http://poblanorails.com/"
+      - msg: VIP
+        ref: "http://goo.gl/UYFBQ1"
+  license: © MIT License
+  love:
+    msg: Costruido con ♥ usando jekyll.
+    ref: "#!"

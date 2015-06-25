@@ -1,3 +1,8 @@
+---
+lang: es
+---
+{% assign t = site.data[page.lang].index %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -37,81 +42,58 @@
         <div class="row">
         <div class="center-align">
           <br>
-          <img src="https://achievement-images.teamtreehouse.com/badges_SimpleFacebook_Stage1.png" alt="" />
-          <p class="white-text">
-            Poblano Rails es una comunidad formada por desarrolladores y emprendedores <br>
-            fascinados con "Ruby" y con "Ruby on Rails".</p>
-          <a class="waves-effect waves-light red darken-2 white-text btn-large">Conoce  más</a>
+          <img src="{{ t.header.img }}" alt="" />
+          <p class="white-text">{{ t.header.msg }}</p>
+          <a href="{{ t.header.btn.ref }}" class="waves-effect waves-light red darken-2 white-text btn-large">{{ t.header.btn.msg }}</a>
         </div>
       </div>
     </header>
 
 
-    <div id="objetivos" class="container">
+    <div id="{{ t.objectives.id }}" class="container">
       <div class='row center-align mup'>
-        <h3>Poblano Rails</h3>
-        <p>Somos una comunidad de desarrolladores fascinados con Ruby y con Rails.</p>
+        <h3>{{ t.objectives.title }}</h3>
+        <p>{{t.objectives.msg}}</p>
+        {% for obj in t.objectives.list %}
         <div class="col s4">
-          <i class="medium material-icons code">videocam</i>
-          <h4>Charlas</h4>
-          <p>
-            Ponencias y lightning talk relacionadas con el ecosistema de ruby y rails.
-          </p>
+          <i class="medium material-icons code">{{ obj.meta.icon }}</i>
+          <h4>{{ obj.title}}</h4>
+          <p>{{ obj.msg}}</p>
         </div>
-        <div class="col s4">
-          <i class="medium material-icons code">forum</i>
-          <h4>Comunidad</h4>
-          <p>
-            Conectar comunidades tecnológicas con las necesidades y oportunidades de la sociedad.
-          </p>
-        </div>
-        <div class="col s4">
-          <i class="medium material-icons code">code</i>
-          <h4>Pizzas y cheves</h4>
-          <p>
-            El combistible para todo apasionado del codigo. ;)
-          </p>
-        </div>
+        {% endfor %}
       </div>
     </div>
 
-    <div id="reuniones" class="up red darken-2 white-text">
+    <div id="{{ t.meetings.id }}" class="up red darken-2 white-text">
       <div class="container">
         <div class="row center-align">
-          <h3>Nuestras reuniones</h3>
+          <h3>{{ t.meetings.title }}</h3>
+          {% for card in t.meetings.list %}
           <div class="col s12 m6 offset-m3">
             <div class="card">
               <div class="card-image">
-                <img src="http://html5facil.com/wp-content/uploads/2015/04/ninja-code-party-saludo.jpg" alt="" />
-                <span class="card-title">Poblano Rails No.1</span>
+                <img src="{{ card.head.img }}" alt="" />
+                <span class="card-title">{{ card.head.msg }}</span>
               </div>
               <div class="card-content black-text">
-                <p >
-                  Ya tenemos fecha para nuestra primera reunión de Poblano Rails.
-                  Habrá Cerveza y Pizzas gracias a nuestros fabulosos patrocinadores: <strong>Devbranding</strong> e <strong>Inventoteca</strong>.
-                </p>
-
+                <p>{{ card.content.msg }}</p>
                 <ul class="collection left-align">
-                  <li class="collection-item avatar">
-                    <img src="https://pbs.twimg.com/profile_images/601081988473163776/TfKqIK5c.jpg" alt="" class="circle"/>
-                    <span class="title">Inventoteca</span>
-                    <p>
-                      Lugar de encuentro en Av. 5 Pte 134 Centro Histórico, Puebla
-                    </p>
+                {% for meta in card.content.list %}
+                    <li class="collection-item avatar">
+                 {% if meta.img != null %}
+                    <img src="{{ meta.img }}" alt="" class="circle"/>
+                 {% elsif meta.icon %}
+                    <i class="material-icons circle green white-text">{{ meta.icon }}</i>
+                 {% endif %}
+                    <span class="title">{{ meta.title }}</span>
+                    <p>{{ meta.msg }}</p>
                   </li>
-
-                <li class="collection-item avatar">
-                  <i class="material-icons circle green white-text">today</i>
-                  <span class="title">Viernes 26 de junio de 2015</span>
-                  <p>
-                    Con un horario de 18:00 a 21:00.
-                  </p>
-                </li>
-              </ul>
+                {% endfor %}
+                </ul>
               </div>
             </div>
           </div>
-
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -120,23 +102,23 @@
       <div class="container ">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">Poblano rails</h5>
-            <p class="grey-text text-lighten-4"> Poblano Rails un espacio para hacer networking, conocer otros programadores, emprendedores, y claro, para poder pasar un buen tiempo entre comunidad.</p>
+            <h5 class="white-text">{{ t.footer.title }}</h5>
+            <p class="grey-text text-lighten-4">{{ t.footer.msg }}</p>
           </div>
           <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Sitios de interes</h5>
+            <h5 class="white-text">{{ t.footer.links.title }}</h5>
             <ul>
-              <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/pages/Poblano-Rails/1648354988732354?fref=ts">Facebook</a></li>
-              <li><a class="grey-text text-lighten-3" href="http://poblanorails.com/">Blog</a></li>
-              <li><a class="grey-text text-lighten-3" href=" http://goo.gl/UYFBQ1">VIP</a></li>
+              {% for link in t.footer.links.list %}
+              <li><a class="grey-text text-lighten-3" href="{{ link.ref}}">{{ link.msg}}</></li>
+              {% endfor %}
             </ul>
           </div>
         </div>
       </div>
       <div class="footer-copyright">
         <div class="container">
-          © MIT License
-          <a class="grey-text text-lighten-4 right" href="#!">Costruido con ♥ usando jekyll.</a>
+          {{ t.footer.license }}
+          <a class="grey-text text-lighten-4 right" href="{{ t.footer.love.ref }}">{{ t.footer.love.msg }}</a>
         </div>
       </div>
     </footer>
