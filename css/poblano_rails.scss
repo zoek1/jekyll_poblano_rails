@@ -1,0 +1,62 @@
+---
+---
+nav {
+  background-color: transparent !important;
+  position: fixed;
+  z-index: 100000;
+  transition: background-color 0.5s ease;
+
+  top: 0px;
+  width: 100%;
+}
+
+header {
+  margin: 0px;
+  background-image: url(http://vivedeviaje.com.mx/wp-content/uploads/2013/03/P1013539.jpg);
+  background-size:  100% 750px;
+  background-repeat: no-repeat;
+  padding: 80px;
+
+
+  top: 0px;
+  width: 100%;
+  z-index: -10000;
+  h1 {
+    font-size: 80px;
+  }
+
+  p {
+    font-size: 28px;
+    text-shadow: 1px 1px #000000;
+  }
+}
+
+.up{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin: 0px;
+}
+
+.mup {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+footer {
+    margin-top: 0px !important;
+}
+
+
+.brand-logo {
+  margin-top: 10px;
+}
+
+.mup > p {
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+
+h1,h2,h3 {
+  font-family: 'Arvo', serif;
+  font-weight: bold;
+}
